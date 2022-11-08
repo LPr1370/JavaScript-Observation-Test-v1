@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="tony.js"></script>
         <script src="index.js"></script>
-        <link rel="stylesheet" href="default.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <main>
             <button id = "start">Start New Game</button>
-            <div style = "width:150px;" id="buttons">
+            <div id="buttons">
             </div>
         </main>
     </body>
-    <script>
-        let allButtons = document.getElementById("buttons")
-        let buttonCount = 25
-        let GenerateButtons = () => {
-            for (let index = 0; index < buttonCount; index++) {
-                allButtons.innerHTML += "<button class= \"tile\">_</button>"
-            }
-        }
-        GenerateButtons()
-    </script>
+    <script src="tony.js"></script>
+
 </html>
