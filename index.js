@@ -25,14 +25,18 @@ other buttons to start a game are allowed.
 could maybe do width=sqrt(max) or maybe set it a rectangle? */
 //maybe we could remove it from the array in the same function we are pushing it to html?
 
-/* put the event listener for max number and submit button here and function call */
 
+/* put the event listener for max number and submit button here and function call */
+let maxNumberInArray = null // user input
 /* end of event listener calls */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* put the rng array and random loop caller here */
 // math.rand(array.length) - 1? 
+//loop while array.length>0 then put number in html and strip from array
+
+
 /* end of the rng and loop array */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
