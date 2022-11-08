@@ -23,7 +23,7 @@ other buttons to start a game are allowed.
 //maybe just need to guarantee the array value is unique? so if array[random] = array[random] then jump to top
 /* since we are doing input max we need to have the HTML grid be of variable height/width, 
 could maybe do width=sqrt(max) or maybe set it a rectangle? */
-
+//maybe we could remove it from the array in the same function we are pushing it to html?
 
 /* put the event listener for max number and submit button here and function call */
 
@@ -32,7 +32,14 @@ could maybe do width=sqrt(max) or maybe set it a rectangle? */
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* put the rng array and random loop caller here */
-
+// math.rand(array.length) - 1? 
 /* end of the rng and loop array */
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//set up if color statement if(number click = previous + 1){change color}
+
+// end of color changer
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
