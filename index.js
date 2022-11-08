@@ -21,3 +21,18 @@ other buttons to start a game are allowed.
 //should be like while i<max array.push i
 //rng to select a number from the array that is UNIQUE
 //maybe just need to guarantee the array value is unique? so if array[random] = array[random] then jump to top
+/* since we are doing input max we need to have the HTML grid be of variable height/width, 
+could maybe do width=sqrt(max) or maybe set it a rectangle? */
+
+
+/* put the event listener for max number and submit button here and function call */
+
+/* end of event listener calls */
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* put the rng array and random loop caller here */
+
+/* end of the rng and loop array */
+
+
