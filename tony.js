@@ -5,7 +5,7 @@ let RandomRange = (y) => {
 }
 
 let GenerateButtons = (buttonCount) => {
-    let chosenButton = RandomRange(buttonCount+1)
+    let chosenButton = RandomRange(buttonCount)
     for (let index = 0; index < buttonCount; index++) {
         if (chosenButton == index) {
             allButtons.innerHTML += "<button class= \"correct-tile\">_</button>"
