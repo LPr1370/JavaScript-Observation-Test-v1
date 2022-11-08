@@ -31,8 +31,8 @@ let maxNumberInArray = null // user input
 /* end of event listener calls */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-/* put the rng array and random loop caller here */
+//lucas will do this one 
+/* put the rng array and random loop caller here */ 
 // math.rand(array.length) - 1? 
 //loop while array.length>0 then put number in html and strip from array
 

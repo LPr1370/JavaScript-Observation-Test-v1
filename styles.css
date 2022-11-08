@@ -1,3 +1,17 @@
 .correct-tile {
-    background-color: blue;
+    background-color: lime;
+}
+button{
+    background-color: rgb(27,62,119);
+    color: white;
+    text-decoration: underline;
+}
+#buttons{
+    margin: auto;
+    display: grid;
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 50px;
+    justify-content: center;
+    grid-template-columns: repeat(5, 50px);
 }
