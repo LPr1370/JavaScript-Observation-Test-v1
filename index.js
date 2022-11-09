@@ -78,6 +78,7 @@ let GenerateNumbers = (buttonCount) => {
     }
 }
 
+
 // Generate the button div's
 let GenerateButtons = (buttonCount) => {
     // Loop through each button slot
