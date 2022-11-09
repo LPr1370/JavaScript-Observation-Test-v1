@@ -25,7 +25,7 @@ other buttons to start a game are allowed.
 could maybe do width=sqrt(max) or maybe set it a rectangle? */
 //maybe we could remove it from the array in the same function we are pushing it to html?
 
-
+//richy will do
 /* put the event listener for max number and submit button here and function call */
 let maxNumberInArray = null // user input
 /* end of event listener calls */
