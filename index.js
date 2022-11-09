@@ -17,6 +17,20 @@ containing 25 numbers and will shuffle the numbers and restart the game. No
 other buttons to start a game are allowed.
 */ 
 
+/////// TONY
+
+// The grid div
+let allButtons = document.getElementById("buttons")
+
+// The amount of grid spots
+let gridSpots = 25
+
+// The amount of numbers to find
+let amountOfChosenNumbers = 2
+
+// Numbers to find
+let chosenNumbers = []
+
 //need to make a loop adding numbers into an array up to max number 
 //should be like while i<max array.push i
 //rng to select a number from the array that is UNIQUE
@@ -25,7 +39,7 @@ other buttons to start a game are allowed.
 could maybe do width=sqrt(max) or maybe set it a rectangle? */
 //maybe we could remove it from the array in the same function we are pushing it to html?
 
-//richy will do
+
 /* put the event listener for max number and submit button here and function call */
 let maxNumberInArray = null // user input
 /* end of event listener calls */
@@ -47,3 +61,6 @@ let maxNumberInArray = null // user input
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Start the game
+GenerateNumbers(gridSpots)
+GenerateButtons(gridSpots)
