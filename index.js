@@ -242,3 +242,4 @@ const clearGame = () =>{
  }
  */
 }
+document.querySelector('#buttonStart').addEventListener('click', startProject);
