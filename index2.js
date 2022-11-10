@@ -107,7 +107,7 @@ let ReloadGame = () => {
 }
 
 /* put the event listener for max number and submit button here and function call */
-let maxNumberInArray = null // user input
+
 /* end of event listener calls */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
