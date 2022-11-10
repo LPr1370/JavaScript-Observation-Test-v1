@@ -1,8 +1,5 @@
-.found-tile {
+.selected-tile {
     background-color: lime;
-}
-.wrong-tile {
-    background-color: red;
 }
 
 button{
