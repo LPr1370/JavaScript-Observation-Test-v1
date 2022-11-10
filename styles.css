@@ -1,7 +1,8 @@
-.correct-tile {
+.selected-tile {
     background-color: lime;
     pointer-events: none;
 }
+
 button{
     background-color: rgb(27,62,119);
     color: white;

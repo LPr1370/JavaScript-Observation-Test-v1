@@ -19,17 +19,12 @@ other buttons to start a game are allowed.
 
 /////// TONY
 
-// The grid div
+let startButton = document.getElementById("start")
 let allButtons = document.getElementById("buttons")
+let numbersFoundLabel = document.getElementById("numbers-found")
 
 // The amount of grid spots
 let gridSpots = 60
-
-// The amount of numbers to find
-let amountOfChosenNumbers = 8
-
-// Numbers to find
-let chosenNumbers = []
 
 //need to make a loop adding numbers into an array up to max number 
 //should be like while i<max array.push i
@@ -57,41 +52,28 @@ let ValueInArray = (v, arr) => {
     return ret;
 }
 
-// Generate the random number
-let GenerateNumbers = () => {
-    chosenNumbers = [] // clear the array
-
-    // Loop through each number slot
-    for (let index = 0; index < amountOfChosenNumbers; index++) {
-        let done = false
-
-        // Generate a random number
-        while (!done) {
-            let val = RandomRange(gridSpots)
-            // Check if number has already been generated
-            if (!ValueInArray(val, chosenNumbers)) {
-                // Add number and exit loop
-                chosenNumbers.push(val)
-                done = true
-            }
+// Get button by number
+let GetButtonByNumber = (num) => {
+    for (let index = 0; index < allButtons.children.length; index++) {
+        const element = allButtons.children[index];
+        if (String(element.textContent) == String(num)) {
+            return element
         }
     }
+    return null
 }
-
 
 // Generate the button div's
 let GenerateButtons = () => {
+    var spots = []
     // Loop through each button slot
     for (let i = 0; i < gridSpots; i++) {
-        // Check if number is a chosen number
-        let chosenButton = ValueInArray(i, chosenNumbers)
-
-        // Set the class depending on if the button is chosen
-        if (chosenButton) {
-            allButtons.innerHTML += "<button class= \"correct-tile\">" + i + "</button>"
-        } else {
-            allButtons.innerHTML += "<button class= \"tile\">" + i + "</button>"
+        var x = RandomRange(gridSpots);
+        while (ValueInArray(x, spots)) {
+           x = RandomRange(gridSpots)
         }
+        spots.push(x)
+        allButtons.innerHTML += "<button class= \"tile\">" + (x+1) + "</button>"
     }
 }
 
@@ -101,10 +83,9 @@ let GenerateListeners = () => {
         const element = allButtons.children[index];
 
         element.addEventListener("click", () => {
-            if (element.className === "correct-tile") {
-                element.className = "found-tile"
-            } else {
-                element.className = "wrong-tile"
+            var x = Number(element.textContent)
+            if (x == 1 || GetButtonByNumber(x-1).className == "selected-tile") {
+                element.className = "selected-tile"
             }
         })
         
@@ -112,8 +93,20 @@ let GenerateListeners = () => {
 
 }
 
+// Clear the game
+let ClearGame = () => {
+    allButtons.innerHTML = ""
+}
+
+// Reload the game
+let ReloadGame = () => {
+    ClearGame()
+    GenerateButtons()
+    GenerateListeners()
+}
+
 /* put the event listener for max number and submit button here and function call */
-let maxNumberInArray = 25 // user input
+let maxNumberInArray = null // user input
 /* end of event listener calls */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,18 +114,6 @@ let maxNumberInArray = 25 // user input
 /* put the rng array and random loop caller here */ 
 // math.rand(array.length) - 1? 
 //loop while array.length>0 then put number in html and strip from array
-let gameArray = [];
-let loopCounter = 1
-while (loopCounter <= maxNumberInArray) {
-    
-    gameArray.push(loopCounter);
-    loopCounter++;
-}//fills the array up to user input (starting at 1)
-we (gameArray.length > 0){
-    let randomArrayCaller = Math.floor(Math.random()*maxNumberInArray)
-    console.log(gameArray[randomArrayCaller])
-    delete gameArray[randomArrayCaller]
-}
 
 
 /* end of the rng and loop array */
@@ -146,3 +127,5 @@ we (gameArray.length > 0){
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Start the game
+ReloadGame()
+startButton.addEventListener("click", ReloadGame)
