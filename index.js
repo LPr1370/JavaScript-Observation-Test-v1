@@ -113,7 +113,7 @@ let GenerateListeners = () => {
 }
 
 /* put the event listener for max number and submit button here and function call */
-let maxNumberInArray = null // user input
+let maxNumberInArray = 25 // user input
 /* end of event listener calls */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,6 +121,18 @@ let maxNumberInArray = null // user input
 /* put the rng array and random loop caller here */ 
 // math.rand(array.length) - 1? 
 //loop while array.length>0 then put number in html and strip from array
+let gameArray = [];
+let loopCounter = 1
+while (loopCounter <= maxNumberInArray) {
+    
+    gameArray.push(loopCounter);
+    loopCounter++;
+}//fills the array up to user input (starting at 1)
+we (gameArray.length > 0){
+    let randomArrayCaller = Math.floor(Math.random()*maxNumberInArray)
+    console.log(gameArray[randomArrayCaller])
+    delete gameArray[randomArrayCaller]
+}
 
 
 /* end of the rng and loop array */
