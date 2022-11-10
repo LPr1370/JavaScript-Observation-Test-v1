@@ -152,18 +152,6 @@ console.log(gameArray)
 
 
 
-
-
-
-
-
-// Start the game
-<<<<<<< richy-work
-GenerateNumbers(gridSpots)
-GenerateButtons(gridSpots)
-
-
-
 //Richy's work
 
 
