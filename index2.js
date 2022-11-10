@@ -22,6 +22,7 @@ other buttons to start a game are allowed.
 let startButton = document.getElementById("buttonStart")
 let allButtons = document.getElementById("buttons")
 let numbersFoundLabel = document.getElementById("numbers-found")
+let winLabel = document.getElementById("win")
 
 // The amount of grid spots
 var gridSpots = document.getElementById('tileNumberInput').value;
@@ -84,6 +85,9 @@ let GenerateListeners = () => {
 
         element.addEventListener("click", () => {
             var x = Number(element.textContent)
+            if (x == allButtons.children.length) {
+                winLabel.innerText = "YOU WIN!"
+            }
             if (x == 1 || GetButtonByNumber(x-1).className == "selected-tile") {
                 element.className = "selected-tile"
             }
@@ -100,6 +104,7 @@ let ClearGame = () => {
 
 // Reload the game
 let ReloadGame = () => {
+    winLabel.innerText = ""
     gridSpots = document.getElementById('tileNumberInput').value;
     ClearGame()
     GenerateButtons()
