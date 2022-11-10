@@ -19,12 +19,12 @@ other buttons to start a game are allowed.
 
 /////// TONY
 
-let startButton = document.getElementById("start")
+let startButton = document.getElementById("buttonStart")
 let allButtons = document.getElementById("buttons")
 let numbersFoundLabel = document.getElementById("numbers-found")
 
 // The amount of grid spots
-let gridSpots = 60
+var gridSpots = document.getElementById('tileNumberInput').value;
 
 //need to make a loop adding numbers into an array up to max number 
 //should be like while i<max array.push i
@@ -100,6 +100,7 @@ let ClearGame = () => {
 
 // Reload the game
 let ReloadGame = () => {
+    gridSpots = document.getElementById('tileNumberInput').value;
     ClearGame()
     GenerateButtons()
     GenerateListeners()
