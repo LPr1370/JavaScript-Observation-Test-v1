@@ -124,15 +124,17 @@ let maxNumberInArray = 25 // user input
 let gameArray = [];
 let loopCounter = 1
 while (loopCounter <= maxNumberInArray) {
-    
     gameArray.push(loopCounter);
     loopCounter++;
 }//fills the array up to user input (starting at 1)
-we (gameArray.length > 0){
-    let randomArrayCaller = Math.floor(Math.random()*maxNumberInArray)
+console.log(gameArray)
+
+while (gameArray.length > 0){
+    let randomArrayCaller = Math.floor(Math.random()*gameArray.length)
     console.log(gameArray[randomArrayCaller])
-    delete gameArray[randomArrayCaller]
+    gameArray.splice(randomArrayCaller,1)
 }
+console.log(gameArray)
 
 
 /* end of the rng and loop array */
