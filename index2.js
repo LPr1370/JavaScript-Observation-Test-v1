@@ -85,13 +85,14 @@ let GenerateListeners = () => {
 
         element.addEventListener("click", () => {
             var x = Number(element.textContent)
-            if (x == allButtons.children.length) {
-                winLabel.innerText = "YOU WIN!"
-            }
-            if (x == 1 || GetButtonByNumber(x-1).className == "selected-tile") {
-                element.className = "selected-tile"
-            }
-        })
+            if (selectedTileIsCorrect(x))
+            {
+                correctTileClassChanger(element);
+                if (gameHasEnded(x))
+                {
+                    displayWinMessage();
+                }   
+            }})
         
     }
 
@@ -135,3 +136,19 @@ let ReloadGame = () => {
 // Start the game
 ReloadGame()
 startButton.addEventListener("click", ReloadGame)
+
+function correctTileClassChanger(element) {
+    element.className = "selected-tile";
+}
+
+function selectedTileIsCorrect(x) {
+    return x == 1 || GetButtonByNumber(x - 1).className == "selected-tile";
+}
+
+function displayWinMessage() {
+    winLabel.innerText = "YOU WIN!";
+}
+
+function gameHasEnded(x) {
+    return x == allButtons.children.length;
+}
