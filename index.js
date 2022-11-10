@@ -148,6 +148,99 @@ console.log(gameArray)
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Start the game
-GenerateNumbers()
-GenerateButtons()
-GenerateListeners()
+
+
+
+
+
+
+
+
+
+// Start the game
+<<<<<<< richy-work
+GenerateNumbers(gridSpots)
+GenerateButtons(gridSpots)
+
+
+
+//Richy's work
+
+
+
+const startProject = (event)=>{
+//generate randomized number array
+//const getGridNumber = (event) => {
+    const totalButtonInput = event.target.parentNode.querySelector('#tileNumberInput').value;
+    let totalButton = parseInt(totalButtonInput)
+    let totalButtons = 25;
+    const gridNumbers =[];
+    for (let counter = 1; counter <= totalButtons;counter++){//need to update to totalButton after confirm testing
+        gridNumbers.push(counter);
+        gridNumbers.sort(() => Math.random() - 0.5);
+    }
+//}
+
+//generate tile buttons
+//const getTiles = () =>{
+    for (grid of gridNumbers){
+    //generating tiles
+        const tile = document.createElement('button');
+        const menu = document.querySelector('#menu');
+
+        //attaching values to tiles
+        tile.classList = "tileStyle";
+        menu.appendChild(tile);
+        tile.innerText = grid;
+        const titleNum = tile.value = grid;
+
+        //attaching click event to button if needed
+        //button.addEventListener('click',selectedTile)
+            //add check for correct clicked button??
+    }
+//}
+
+//check for correct clicked button
+const selectedTile = ()=>{
+    let tileCounter = 1;
+        if (tileNum = tileCounter){//
+            console.log("correct");
+            tileCounter  = tileCounter + 1;
+            document.body.style.background = randomBackgroundColor();
+            tile.classList.add("correct-tile");
+        }else if(tileCounter = totalButtons){ //need to update to totalButton after confirm testing
+            console.log("nothing");
+            document.querySelector('#results').append("You Win!")
+        }else{
+            console.log("nothing");
+        }
+}
+
+//generate random background color
+const randomBackgroundColor = () =>{
+    let x = Math.floor(Math.random()*256);
+    let y = Math.floor(Math.random()*256);
+    let z = Math.floor(Math.random()*256);
+    let newBackgroundColor = `rgb(${x},${y},${z})`;
+    console.log(newBackgroundColor);
+}
+/*
+//clear game
+const clearGame = () =>{
+    totalButtonInput = 0;
+    counter = 0;
+    titleCounter =1;
+    gridNumbers=[];
+    document.body.style.background = rgb(27,62,119);
+    remove class from all buttons
+}
+*/
+/*
+//timer
+ let time = 0;
+ let timePassing = setInterval(function()){
+    time = time + 1;
+    document.getElementById("timer").innerHTML = time;
+ }
+ */
+}
