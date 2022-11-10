@@ -23,10 +23,10 @@ other buttons to start a game are allowed.
 let allButtons = document.getElementById("buttons")
 
 // The amount of grid spots
-let gridSpots = 25
+let gridSpots = 60
 
 // The amount of numbers to find
-let amountOfChosenNumbers = 2
+let amountOfChosenNumbers = 8
 
 // Numbers to find
 let chosenNumbers = []
@@ -58,7 +58,7 @@ let ValueInArray = (v, arr) => {
 }
 
 // Generate the random number
-let GenerateNumbers = (buttonCount) => {
+let GenerateNumbers = () => {
     chosenNumbers = [] // clear the array
 
     // Loop through each number slot
@@ -67,7 +67,7 @@ let GenerateNumbers = (buttonCount) => {
 
         // Generate a random number
         while (!done) {
-            let val = RandomRange(buttonCount)
+            let val = RandomRange(gridSpots)
             // Check if number has already been generated
             if (!ValueInArray(val, chosenNumbers)) {
                 // Add number and exit loop
@@ -80,21 +80,37 @@ let GenerateNumbers = (buttonCount) => {
 
 
 // Generate the button div's
-let GenerateButtons = (buttonCount) => {
+let GenerateButtons = () => {
     // Loop through each button slot
-    for (let i = 0; i < buttonCount; i++) {
+    for (let i = 0; i < gridSpots; i++) {
         // Check if number is a chosen number
         let chosenButton = ValueInArray(i, chosenNumbers)
 
         // Set the class depending on if the button is chosen
         if (chosenButton) {
-            allButtons.innerHTML += "<button class= \"correct-tile\">_</button>"
+            allButtons.innerHTML += "<button class= \"correct-tile\">" + i + "</button>"
         } else {
-            allButtons.innerHTML += "<button class= \"tile\">_</button>"
+            allButtons.innerHTML += "<button class= \"tile\">" + i + "</button>"
         }
     }
 }
 
+// Generate the listeners
+let GenerateListeners = () => {
+    for (let index = 0; index < allButtons.children.length; index++) {
+        const element = allButtons.children[index];
+
+        element.addEventListener("click", () => {
+            if (element.className === "correct-tile") {
+                element.className = "found-tile"
+            } else {
+                element.className = "wrong-tile"
+            }
+        })
+        
+    }
+
+}
 
 /* put the event listener for max number and submit button here and function call */
 let maxNumberInArray = null // user input
@@ -118,5 +134,6 @@ let maxNumberInArray = null // user input
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Start the game
-GenerateNumbers(gridSpots)
-GenerateButtons(gridSpots)
+GenerateNumbers()
+GenerateButtons()
+GenerateListeners()

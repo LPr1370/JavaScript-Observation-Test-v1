@@ -1,6 +1,10 @@
-.correct-tile {
+.found-tile {
     background-color: lime;
 }
+.wrong-tile {
+    background-color: red;
+}
+
 button{
     background-color: rgb(27,62,119);
     color: white;
